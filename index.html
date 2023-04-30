@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunday Media</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contacto">Contact</a></li>
+      </ul>
+    </nav>
+    <!--<div class="switcher">
+        <label for="dark-mode-switch">Dark Mode:</label>
+        <input type="checkbox" id="dark-mode-switch">
+      </div>-->
+    <a href="index.html" class="logo">SUNDAY MEDIA</a>
+  </header>
+
+  <main>
+    <section id="home">
+      <!-- Contenido de la sección HOME -->
+      <div>
+        <h2>Digital Envisioners: <br> Transforming Your Vision <br> into Reality!</h2>
+      </div>
+      <div><!-- 
+        <p>
+          Providing effective solutions for your digital needs.
+          From social media strategies to influencer marketing,
+          content creation, paid media, and more.
+          We cover every aspect to help your brand thrive.
+        </p> -->
+      </div>
+<!--   
+      <button id="language-toggle" onclick="toggleLanguage()"></button>
+-->
+
+    </section>
+
+    <div class="about-container">
+      <section id="about">
+        <div data-aos="fade-up" data-aos-duration="1600">
+          <h2>About</h2>
+          <div class="about-content">
+            <h3>Welcome to our Digital Marketing Agency</h3>
+            <p>
+              • Boost your online presence: We specialize in helping businesses grow online with tailored digital
+              marketing services.
+            </p>
+            <p>
+              • Achieve measurable success: Drive results with our data-driven approach, increasing visibility, traffic,
+              and quality leads.
+            </p>
+            <p>
+              • Transparent and collaborative: We work closely with you to develop customized strategies for long-term
+              success.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section id="services">
+      <div data-aos="flip-left" data-aos-duration="1600">
+        <h2>Our Services</h2>
+        <div class="slider">
+          <div class="slider-container">
+            <div class="slide active">
+              <h3>Advertising Campaigns</h3>
+              <i class="fas fa-bullhorn"></i>
+              <p>Reach your target audience through effective advertising campaigns using platforms such as Google Ads,
+                Facebook Ads, and Instagram Ads.</p>
+            </div>
+            <div class="slide">
+              <h3>Web Development and Optimization</h3>
+              <i class="fas fa-code"></i>
+              <p>Create and optimize stunning websites that are visually appealing, user-friendly, and optimized for
+                search engines.</p>
+            </div>
+            <div class="slide">
+              <h3>Pay-Per-Click (PPC) Advertising</h3>
+              <i class="fas fa-dollar-sign"></i>
+              <p>Maximize your online visibility and drive targeted traffic to your website through strategic
+                pay-per-click advertising campaigns.</p>
+            </div>
+            <div class="slider-navigation">
+              <div class="dot active"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <!-- Agrega más slides según sea necesario -->
+          </div>
+        </div>
+
+    </section>
+
+
+    <!--    <section id="services">
+       <h2>Services</h2>
+            <div class="services-grid">
+              <div class="service">
+                <h3>Advertising Campaigns</h3>
+                <p>Reach your target audience through effective advertising campaigns using platforms such as Google Ads, Facebook Ads, and Instagram Ads.</p>
+              </div>
+              <div class="service">
+                <h3>Web Development and Optimization</h3>
+                <p>Create and optimize stunning websites that are visually appealing, user-friendly, and optimized for search engines.</p>
+              </div>
+              <div class="service">
+                <h3>Pay-Per-Click (PPC) Advertising</h3>
+                <p>Maximize your online visibility and drive targeted traffic to your website through strategic pay-per-click advertising campaigns.</p>
+              </div>
+            </div> -->
+
+
+    </section>
+
+    <section id="contacto">
+      <div data-aos="fade-right" data-aos-duration="1200" class="fondo-formulario">
+        <h2>Contact</h2>
+        <form>
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name">
+
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email">
+
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message"></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div data-aos="fade-up" class="footer">
+        <p>Sunday Media - 2023 Copyright</p>
+        <p>Developed by Facundo Tisch</p>
+      </div>
+
+    </section>
+  </main>
+  <script>
+    window.addEventListener('scroll', function () {
+      var header = document.querySelector('header');
+      var scrollPosition = window.scrollY;
+
+      if (scrollPosition > 0) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+
+
+    const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+let activeSlide = 0;
+let touchStartX = 0;
+let touchEndX = 0;
+
+const showSlide = (slideIndex) => {
+  slides.forEach((slide, index) => {
+    if (index === slideIndex) {
+      slide.classList.add('active');
+      dots[index].classList.add('active');
+    } else {
+      slide.classList.remove('active');
+      dots[index].classList.remove('active');
+    }
+  });
+};
+
+const nextSlide = () => {
+  activeSlide++;
+  if (activeSlide === slides.length) {
+    activeSlide = 0;
+  }
+  showSlide(activeSlide);
+};
+
+const prevSlide = () => {
+  activeSlide--;
+  if (activeSlide < 0) {
+    activeSlide = slides.length - 1;
+  }
+  showSlide(activeSlide);
+};
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    activeSlide = index;
+    showSlide(activeSlide);
+  });
+});
+
+slider.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+});
+
+slider.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].clientX;
+  handleGesture();
+});
+
+const handleGesture = () => {
+  if (touchEndX < touchStartX) {
+    nextSlide();
+  } else if (touchEndX > touchStartX) {
+    prevSlide();
+  }
+};
+
+// Agregar eventos para la navegación manual
+slider.addEventListener('swiped-left', nextSlide);
+slider.addEventListener('swiped-right', prevSlide);
+
+// Obtén una referencia a todos los enlaces en el menú de navegación
+const links = document.querySelectorAll('header nav ul li a');
+
+// Itera sobre cada enlace y agrega un controlador de eventos
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+
+    // Obtiene la altura del encabezado
+    const headerHeight = document.querySelector('header').offsetHeight;
+
+    // Obtiene el destino del enlace utilizando el atributo href
+    const targetId = link.getAttribute('href').substring(1);
+
+    // Obtiene la posición del destino de la sección
+    const targetPosition = document.getElementById(targetId).offsetTop;
+
+    // Calcula la posición compensada restando la altura del encabezado
+    const scrollToPosition = targetPosition - headerHeight;
+
+    // Desplázate suavemente hacia la posición compensada
+    window.scrollTo({
+      top: scrollToPosition,
+      behavior: 'smooth'
+    });
+  });
+});
+
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script>/* 
+ const toggleLanguage = () => {
+  const button = document.getElementById('language-toggle');
+  const currentLanguage = button.textContent;
+
+  if (currentLanguage === 'English') {
+    // Lógica para cambiar los elementos y contenidos al idioma inglés
+    document.querySelector('p').textContent = 'Providing effective solutions for your digital needs. From social media strategies to influencer marketing, content creation, paid media, and more. We cover every aspect to help your brand thrive.';
+    button.textContent = 'Español';
+  } else {
+    // Lógica para cambiar los elementos y contenidos al idioma español
+    document.querySelector('p').textContent = 'Proporcionamos soluciones efectivas para tus necesidades digitales. Desde estrategias en redes sociales hasta marketing de influencers, creación de contenido, medios pagados y más. Cubrimos todos los aspectos para ayudar a que tu marca prospere.';
+    button.textContent = 'English';
+  }
+};
+*/.
+  </script>
+
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
